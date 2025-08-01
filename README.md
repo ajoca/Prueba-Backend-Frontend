@@ -26,47 +26,40 @@ CONFIGURACIÓN DEL BACKEND (LARAVEL)
 1. Iniciar Apache y MySQL en XAMPP.
 
 2. Crear la base de datos:
-   - Abrir http://localhost/phpmyadmin
-   - Crear una base llamada ic_tasks
+   - Abrir el panel de phpMyAdmin (normalmente http://localhost/phpmyadmin)
+   - Crear una base de datos para este proyecto.
 
-3. Instalar dependencias
+3. Instalar dependencias:
    cd ic-tasks-backend
    composer install
 
-4. Configurar .env
+4. Configurar el archivo .env:
    cp .env.example .env
-   Editar estas variables:
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=ic_tasks
-   DB_USERNAME=root
-   DB_PASSWORD=
+   Completar los datos de conexión según tu entorno (driver, host, puerto, base de datos, usuario y contraseña).
 
-5. Generar clave de la app
+5. Generar la clave de la aplicación:
    php artisan key:generate
 
-6. Migrar base de datos
+6. Migrar la base de datos:
    php artisan migrate:fresh --seed
 
-7. Levantar el servidor
+7. Levantar el servidor:
    php artisan serve
-   Backend: http://127.0.0.1:8000
+   Backend: http://127.0.0.1:8000 (por defecto)
 
 -------------------------------------------------
 CONFIGURACIÓN DEL FRONTEND (REACT)
 -------------------------------------------------
-1. Instalar dependencias
+1. Instalar dependencias:
    cd ic-tasks-frontend
    npm install
 
-2. Configurar .env
-   cp .env.example .env
+2. (Opcional) Crear un archivo .env si deseas definir la URL de la API:
    REACT_APP_API_URL=http://127.0.0.1:8000/api
 
-3. Iniciar la app React
+3. Iniciar la app React:
    npm start
-   Frontend: http://localhost:3000
+   Frontend: http://localhost:3000 (por defecto)
 
 -------------------------------------------------
 FUNCIONALIDADES
@@ -107,6 +100,8 @@ Registra:
 - Creación de tarea
 - Actualización de tarea
 - Eliminación de tarea
+
+
 -------------------------------------------------
 CAPUTRAS DE PANTALLA
 -------------------------------------------------
